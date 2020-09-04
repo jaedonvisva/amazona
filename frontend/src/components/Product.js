@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rating from './Rating';
 
 export default function Product(props) {
   const { product } = props;
@@ -12,11 +13,14 @@ export default function Product(props) {
         <Link to={`/product/${product._id}`}>
           <h2>{product.name}</h2>
         </Link>
-        <div class="product-brand">Brand: {product.brand}</div>
-        <div class="product-price">Price: ${product.price}</div>
-        <div class="product-rating">Rating: {product.rating}</div>
-        <div class="product-reviews">
-          Number of Reviews: {product.numReviews}
+        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+        <div className="row">
+          <div className="price">${product.price}</div>
+          <div>
+            <Link to={`/seller/${product.seller._id}`}>
+              {product.seller.seller.name}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -86,7 +86,7 @@ img.medium {
   justify-content: center;
 }
 
-/* card */
+/* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;
   border-radius: 0.5rem;
@@ -98,5 +98,18 @@ img.medium {
 }
 
 .card-body > * {
-  color: #808080;
+  color: #404040;
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
+}
+
+/* Rating */
+.rating span {
+  color: #f0c040;
+  margin: 0.1rem;
+}
+.rating span:last-child {
+  color: #404040;
 }

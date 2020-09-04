@@ -9,6 +9,10 @@ const data = {
       brand: 'Nike',
       rating: 4.5,
       numReviews: 12,
+      seller: {
+        _id: 's1',
+        seller: { name: 'Seller 1' },
+      },
     },
     {
       _id: '2',
@@ -19,6 +23,10 @@ const data = {
       brand: 'Adidas',
       rating: 4.2,
       numReviews: 123,
+      seller: {
+        _id: 's1',
+        seller: { name: 'Seller 1' },
+      },
     },
     {
       _id: '3',
@@ -29,6 +37,10 @@ const data = {
       brand: 'Lacoste',
       rating: 4.1,
       numReviews: 133,
+      seller: {
+        _id: 's1',
+        seller: { name: 'Seller 1' },
+      },
     },
     {
       _id: '4',
@@ -39,6 +51,10 @@ const data = {
       brand: 'Nike',
       rating: 3.5,
       numReviews: 124,
+      seller: {
+        _id: 's2',
+        seller: { name: 'Seller 2' },
+      },
     },
     {
       _id: '5',
@@ -49,6 +65,10 @@ const data = {
       brand: 'Lacoste',
       rating: 4.7,
       numReviews: 125,
+      seller: {
+        _id: 's2',
+        seller: { name: 'Seller 2' },
+      },
     },
     {
       _id: '6',
@@ -59,6 +79,10 @@ const data = {
       brand: 'Under Armour',
       rating: 4.6,
       numReviews: 126,
+      seller: {
+        _id: 's2',
+        seller: { name: 'Seller 2' },
+      },
     },
   ],
 };
