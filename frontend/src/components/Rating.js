@@ -58,7 +58,7 @@ export default function Rating(props) {
           }
         ></i>
       </span>
-      <soan>{props.text || ''}</soan>
+      <span>{props.text || ''}</span>
     </div>
   );
 }

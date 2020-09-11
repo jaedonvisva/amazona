@@ -52,13 +52,41 @@ a {
 a:hover {
   color: #ff8000;
 }
-
-h2 {
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li {
+  margin-top: 1rem;
+}
+h1 {
   font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.6rem;
   padding: 0.5rem 0;
+}
+select,
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  border: 0.1rem #808080 solid;
+}
+button {
+  cursor: pointer;
+}
+select:hover,
+button:hover {
+  border: 0.1rem #404040 solid;
 }
 button.primary {
   background-color: #f0c040;
+}
+button.block {
+  width: 100%;
 }
 .fw {
   width: 100%;
@@ -76,10 +104,29 @@ a.brand {
   color: #ffffff;
 }
 /* Image*/
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
 img.medium {
   max-width: 29rem;
   width: 100%;
   border-radius: 0.5rem;
+}
+img.large {
+  max-width: 50rem;
+  width: 100%;
+}
+ul.images {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.images li {
+  margin: 0.5rem;
+}
+ul.images button {
+  background: none;
+  cursor: pointer;
 }
 /* Rows and columns */
 .row {
@@ -91,10 +138,23 @@ img.medium {
 .row.center {
   justify-content: center;
 }
-
+.row.top {
+  align-items: flex-start;
+}
+/* col-1 small, col-2 medium, col-3 large width */
+.col-1 {
+  flex: 1 1 25rem;
+}
+.col-2 {
+  flex: 2 1 50rem;
+}
+.col-3 {
+  flex: 3 1 75rem;
+}
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
 }
