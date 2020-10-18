@@ -1,4 +1,5 @@
 const data = {
+  categories: ['Shirts', 'Pants', 'Shoes'],
   products: [
     {
       _id: '1',
