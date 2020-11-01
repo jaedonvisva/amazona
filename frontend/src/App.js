@@ -9,7 +9,7 @@ import useComponentVisible from './components/useComponentVisible';
 function App() {
   const { ref, isComponentVisible } = useComponentVisible(false);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
-  console.log(isComponentVisible);
+
   return (
     <BrowserRouter>
       <div className="grid-container">

@@ -35,10 +35,10 @@ export default function ProductScreen(props) {
             Images:
             <ul className="images">
               {[product.image, ...product.images].map((x) => (
-                <li>
+                <li key={x}>
                   <button
                     type="button"
-                    class="light"
+                    className="light"
                     onClick={() => switchImage(x)}
                   >
                     <img src={x} alt="product" className="small"></img>
@@ -67,9 +67,9 @@ export default function ProductScreen(props) {
                 <div>Status</div>
                 <div>
                   {product.countInStock > 0 ? (
-                    <span class="success">In Stock</span>
+                    <span className="success">In Stock</span>
                   ) : (
-                    <span class="error">Unavailable</span>
+                    <span className="error">Unavailable</span>
                   )}
                 </div>
               </div>

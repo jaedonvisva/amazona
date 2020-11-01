@@ -16,7 +16,7 @@ const data = {
       rating: 4.5,
       numReviews: 12,
 
-      countInStock: 10,
+      countInStock: 30,
       seller: {
         _id: 's1',
         seller: { name: 'Seller 1' },
