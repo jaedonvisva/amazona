@@ -1,35 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import data from '../data';
+import React, { useEffect } from 'react';
 import Product from '../components/Product';
-import Axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { listProducts } from '../actions/productActions';
 
 export default function HomeScreen(props) {
   const category = props.match.params.category;
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const { data } = await Axios.get('/api/products');
-        setLoading(false);
-        setProducts(
-          category
-            ? data.filter(
-                (x) =>
-                  category.toLowerCase().indexOf(x.category.toLowerCase()) >= 0
-              )
-            : data
-        );
-      } catch (err) {
-        setLoading(false);
-        setError(err.message);
-      }
-    };
-    fetchProducts();
-  }, [category]);
+    dispatch(listProducts(category));
+  }, [category, dispatch]);
 
   return (
     <div className="row center">

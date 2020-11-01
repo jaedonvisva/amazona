@@ -4,7 +4,7 @@ const data = {
     {
       _id: '1',
       name: 'Nike Slim Shirt',
-      category: 'shirt',
+      category: 'Shirts',
       image: '/images/p1.jpg',
       images: ['/images/p2.jpg', '/images/p3.jpg'],
       reviews: [
@@ -26,7 +26,7 @@ const data = {
     {
       _id: '2',
       name: 'Adidas Fit Shirt',
-      category: 'shirt',
+      category: 'Shirts',
       image: '/images/p2.jpg',
       images: [],
       price: 70,
@@ -43,7 +43,7 @@ const data = {
     {
       _id: '3',
       name: 'Lacoste Free Size Shirt',
-      category: 'shirt',
+      category: 'Shirts',
       image: '/images/p3.jpg',
       images: [],
       price: '610',
@@ -60,7 +60,7 @@ const data = {
     {
       _id: '4',
       name: 'Nike Slim Pants',
-      category: 'pants',
+      category: 'Pants',
       image: '/images/p4.jpg',
       images: [],
       price: '600',
@@ -77,7 +77,7 @@ const data = {
     {
       _id: '5',
       name: 'Lacoste Fit Pants',
-      category: 'pants',
+      category: 'Pants',
       image: '/images/p5.jpg',
       images: [],
       price: '64',
