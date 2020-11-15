@@ -3,6 +3,7 @@ import {
   CART_ADD_ITEM_SUCCESS,
   CART_ADD_ITEM_FAIL,
   CART_ADD_ITEM_REQUEST,
+  CART_REMOVE_ITEM,
 } from '../constants/cartConstants';
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
   try {
@@ -24,7 +25,16 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
         qty,
       },
     });
+    localStorage.setItem(
+      'cartItems',
+      JSON.stringify(getState().cart.cartItems)
+    );
   } catch (error) {
     dispatch({ type: CART_ADD_ITEM_FAIL, payload: error.message });
   }
+};
+
+export const removeFromCart = (productId) => async (dispatch, getState) => {
+  dispatch({ type: CART_REMOVE_ITEM, payload: productId });
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };

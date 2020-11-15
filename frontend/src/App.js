@@ -5,10 +5,13 @@ import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
 import data from './data';
 import useComponentVisible from './components/useComponentVisible';
+import { useSelector } from 'react-redux';
 
 function App() {
   const { ref, isComponentVisible } = useComponentVisible(false);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
   return (
     <BrowserRouter>
@@ -27,7 +30,12 @@ function App() {
             </Link>
           </div>
           <div>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">
+              Cart
+              {cartItems.length > 0 && (
+                <span className="badge">{cartItems.length}</span>
+              )}
+            </Link>
             <Link to="/signin">Sign In</Link>
           </div>
         </header>

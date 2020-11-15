@@ -2,6 +2,7 @@ import {
   CART_ADD_ITEM_FAIL,
   CART_ADD_ITEM_REQUEST,
   CART_ADD_ITEM_SUCCESS,
+  CART_REMOVE_ITEM,
 } from '../constants/cartConstants';
 
 export const cartReducer = (state = { cartItems: [] }, action) => {
@@ -24,6 +25,11 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
 
     case CART_ADD_ITEM_FAIL:
       return { ...state, loading: false, error: action.payload };
+    case CART_REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((x) => x.product !== action.payload),
+      };
     default:
       return state;
   }

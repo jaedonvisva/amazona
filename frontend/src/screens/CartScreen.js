@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
@@ -17,7 +17,11 @@ export default function CartScreen(props) {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
-  }, []);
+  }, [productId, qty, dispatch]);
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+    props.history.push('/cart');
+  };
 
   return (
     <div className="row top">
@@ -34,20 +38,25 @@ export default function CartScreen(props) {
             {cartItems.map((item) => (
               <li key={item.product}>
                 <div className="row">
-                  <div>
+                  <div className="flex-1">
                     <img
                       src={item.image}
                       className="small"
                       alt={item.name}
                     ></img>
                   </div>
-                  <div>
+                  <div className="flex-3">
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </div>
-                  <div>{item.qty}</div>
-                  <div>${item.price}</div>
-                  <div>
-                    <button>Delete</button>
+                  <div className="flex-1">{item.qty}</div>
+                  <div className="flex-1">${item.price}</div>
+                  <div className="flex-1">
+                    <button
+                      type="button"
+                      onClick={() => removeFromCartHandler(item.product)}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               </li>
@@ -61,7 +70,9 @@ export default function CartScreen(props) {
             Subtotal: ({cartItems.reduce((a, c) => a + c.qty, 0)} items) $
             {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
           </h2>
-          <button className="primary block">Proceed To Checkout</button>
+          <button disabled={cartItems.length === 0} className="primary block">
+            Proceed To Checkout
+          </button>
         </div>
       </div>
     </div>
