@@ -14,6 +14,14 @@ app.get('/api/products', (req, res) => {
     : data.products;
   res.send(products);
 });
+app.get('/api/products/:id', (req, res) => {
+  const product = data.products.find((x) => x._id === req.params.id);
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).message({ message: 'Product Not Found' });
+  }
+});
 
 app.listen(5000, () => {
   console.log(`Server is ready at ${SERVER}`);

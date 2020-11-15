@@ -200,6 +200,24 @@ ul.images button {
 .col-3 {
   flex: 3 1 75rem;
 }
+/* Alert */
+.alert {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid transparent;
+}
+.alert-info {
+  color: #4040c0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #c04040;
+  background-color: #ffe0e0;
+}
+.alert-success {
+  color: #40c040;
+  background-color: #e0ffe0;
+}
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;
