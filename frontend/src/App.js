@@ -6,6 +6,7 @@ import CartScreen from './screens/CartScreen';
 import data from './data';
 import useComponentVisible from './components/useComponentVisible';
 import { useSelector } from 'react-redux';
+import SigninScreen from './screens/SigninScreen';
 
 function App() {
   const { ref, isComponentVisible } = useComponentVisible(false);
@@ -67,6 +68,7 @@ function App() {
           </ul>
         </aside>
         <main>
+          <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/product/:id" component={ProductScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route

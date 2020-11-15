@@ -22,6 +22,9 @@ export default function CartScreen(props) {
     dispatch(removeFromCart(id));
     props.history.push('/cart');
   };
+  const checkoutHandler = () => {
+    props.history.push('/signin?redirect=shipping');
+  };
 
   return (
     <div className="row top">
@@ -70,7 +73,11 @@ export default function CartScreen(props) {
             Subtotal: ({cartItems.reduce((a, c) => a + c.qty, 0)} items) $
             {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
           </h2>
-          <button disabled={cartItems.length === 0} className="primary block">
+          <button
+            onClick={checkoutHandler}
+            disabled={cartItems.length === 0}
+            className="primary block"
+          >
             Proceed To Checkout
           </button>
         </div>

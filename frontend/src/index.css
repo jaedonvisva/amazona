@@ -68,6 +68,8 @@ h2 {
   font-size: 1.6rem;
   padding: 0.5rem 0;
 }
+input,
+textarea,
 select,
 button {
   padding: 1rem;
@@ -82,7 +84,8 @@ button:disabled {
   color: #808080;
   cursor: auto;
 }
-
+input:hover,
+textarea:hover,
 select:hover,
 button:hover {
   border: 0.1rem #404040 solid;
@@ -313,4 +316,19 @@ ul.images button {
 }
 .error {
   color: #c00000;
+}
+
+/* Form */
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  display: block;
+  margin: 1rem 0;
 }
