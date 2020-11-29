@@ -5,9 +5,12 @@
   "description": "Amazona",
   "main": "index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-flowtype": "^5.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mongoose": "^5.10.15"
   },
   "devDependencies": {
     "eslint": "^7.8.1",

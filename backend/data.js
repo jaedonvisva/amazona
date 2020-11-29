@@ -1,8 +1,30 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'Jaedon',
+      email: 'admin@exmaple.com',
+      password: bcrypt.hashSync('123456', 8),
+      isAdmin: true,
+      isSeller: true,
+      seller: {
+        name: 'Puma',
+        logo: '/images/logo1.png',
+        description: 'best seller',
+        rating: 4.5,
+        numReviews: 100,
+      },
+    },
+    {
+      name: 'John',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456', 8),
+    },
+  ],
   categories: ['Shirts', 'Pants', 'Shoes'],
   products: [
     {
-      _id: '1',
       name: 'Nike Slim Shirt',
       category: 'Shirts',
       image: '/images/p1.jpg',
@@ -17,14 +39,9 @@ const data = {
       numReviews: 12,
 
       countInStock: 30,
-      seller: {
-        _id: 's1',
-        seller: { name: 'Seller 1' },
-      },
       description: 'sample description',
     },
     {
-      _id: '2',
       name: 'Adidas Fit Shirt',
       category: 'Shirts',
       image: '/images/p2.jpg',
@@ -34,14 +51,9 @@ const data = {
       rating: 4.2,
       numReviews: 123,
       countInStock: 10,
-      seller: {
-        _id: 's1',
-        seller: { name: 'Seller 1' },
-      },
       description: 'sample description',
     },
     {
-      _id: '3',
       name: 'Lacoste Free Size Shirt',
       category: 'Shirts',
       image: '/images/p3.jpg',
@@ -51,14 +63,9 @@ const data = {
       rating: 4.1,
       numReviews: 133,
       countInStock: 10,
-      seller: {
-        _id: 's1',
-        seller: { name: 'Seller 1' },
-      },
       description: 'sample description',
     },
     {
-      _id: '4',
       name: 'Nike Slim Pants',
       category: 'Pants',
       image: '/images/p4.jpg',
@@ -68,14 +75,9 @@ const data = {
       rating: 3.5,
       numReviews: 124,
       countInStock: 10,
-      seller: {
-        _id: 's2',
-        seller: { name: 'Seller 2' },
-      },
       description: 'sample description',
     },
     {
-      _id: '5',
       name: 'Lacoste Fit Pants',
       category: 'Pants',
       image: '/images/p5.jpg',
@@ -85,14 +87,9 @@ const data = {
       rating: 4.7,
       numReviews: 125,
       countInStock: 10,
-      seller: {
-        _id: 's2',
-        seller: { name: 'Seller 2' },
-      },
       description: 'sample description',
     },
     {
-      _id: '6',
       name: 'Under Armour Pants',
       category: 'Pants',
       image: '/images/p6.jpg',
@@ -102,10 +99,6 @@ const data = {
       rating: 4.6,
       numReviews: 126,
       countInStock: 0,
-      seller: {
-        _id: 's2',
-        seller: { name: 'Seller 2' },
-      },
       description: 'sample description',
     },
   ],
