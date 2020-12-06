@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { signin } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
-export default function SigninScreen() {
+export default function SigninScreen(props) {
   //
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -13,6 +14,12 @@ export default function SigninScreen() {
 
   const userSignin = useSelector((state) => state.userSignin);
   const { loading, error, userInfo } = userSignin;
+
+  useEffect(() => {
+    if (userInfo) {
+      props.history.push('/');
+    }
+  }, [userInfo]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -53,6 +60,12 @@ export default function SigninScreen() {
         <div>
           <label></label>
           <button className="primary">Sign In</button>
+        </div>
+        <div>
+          <label></label>
+          <div>
+            New Customer? <Link to="/register">Create your account</Link>
+          </div>
         </div>
       </form>
     </div>
