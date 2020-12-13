@@ -7,7 +7,8 @@ const productRouter = express.Router();
 productRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
-    const products = await Product.find({}).populate('seller');
+    const categoryFilter = req.query.category ? {category:req.query.category} : {}
+    const products = await Product.find({...categoryFilter}).populate('seller');
     res.send(products);
   })
 );
