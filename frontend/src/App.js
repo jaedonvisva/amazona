@@ -8,6 +8,7 @@ import useComponentVisible from './components/useComponentVisible';
 import { useSelector } from 'react-redux';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingScreen from './screens/ShippingScreen';
 
 function App() {
   const { ref, isComponentVisible } = useComponentVisible(false);
@@ -69,6 +70,7 @@ function App() {
           </ul>
         </aside>
         <main>
+          <Route path="/shipping" component={ShippingScreen}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/product/:id" component={ProductScreen}></Route>
