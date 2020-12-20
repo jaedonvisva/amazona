@@ -23,7 +23,8 @@
     "nodemon": "^2.0.6"
   },
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
+    "build": "cd frontend && npm install && npm run build && cd .."
   },
   "repository": {
     "type": "git",

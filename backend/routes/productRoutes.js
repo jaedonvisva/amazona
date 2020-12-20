@@ -13,6 +13,7 @@ productRouter.get(
     const products = await Product.find({ ...categoryFilter }).populate(
       'seller'
     );
+
     res.send(products);
   })
 );
